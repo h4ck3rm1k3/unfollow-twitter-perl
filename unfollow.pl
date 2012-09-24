@@ -42,7 +42,7 @@ try {
 #-- Fetch friends
 try {
     
-    my $fi   = $nt->friends_ids($id);
+    my $f   = $nt->friends_ids($id);
     @friends = @{$f->{ids}};
 }
 catch {
