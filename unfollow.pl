@@ -36,10 +36,11 @@ try {
     $followers=join(' ',@fids);
       
 } catch {
-    die @_;
+    print "\n\n$_\n"; 
+    exit 1;
+
 };
 
-if($@){print "\n\n$@\n"; exit 1; }
  
 #-- Fetch friends
 try {
@@ -48,10 +49,11 @@ try {
     @friends=@{$f->{ids}};
 }
 catch {
-    die @_;
+    print "\n\n$_\n";
+    exit 2;
 };
 
-if($@){print "\n\n$@\n";exit 2;}
+
  
 #-- Now find which of the friends does not follow you
 for my $friend (@friends){
